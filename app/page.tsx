@@ -3,7 +3,7 @@ import { ArrowRight, Home, TrendingUp, Handshake, CheckCircle2, Phone, Mail } fr
 import { PropertyCard } from "@/components/PropertyCard";
 import { properties } from "@/lib/properties";
 
-const featured = properties.filter((p) => p.hervorgehoben);
+const featured = properties.filter((p) => p.typ === "haus" && !p.preisAufAnfrage);
 
 const services = [
   {
