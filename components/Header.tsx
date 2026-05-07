@@ -22,13 +22,13 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-tight group" onClick={() => setOpen(false)}>
-            <span className="text-white font-heading text-xl md:text-2xl font-bold tracking-wide group-hover:text-orange-300 transition-colors">
-              Timberlae
-            </span>
-            <span className="text-[#B84C0A] text-xs md:text-sm font-medium tracking-widest uppercase">
-              Immobilien
-            </span>
+          <Link href="/" onClick={() => setOpen(false)}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/timberlae-logo-mono-ocher.png"
+              alt="Timberlae Immobilien"
+              className="h-10 md:h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}

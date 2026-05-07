@@ -9,8 +9,12 @@ export function Footer() {
           {/* Branding */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <span className="text-white font-heading text-2xl font-bold block">Timberlae</span>
-              <span className="text-[#B84C0A] text-sm font-medium tracking-widest uppercase">Immobilien</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/timberlae-logo-mono-ocher.png"
+                alt="Timberlae Immobilien"
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               Ihr persönlicher Immobilienmakler in Großefehn und der Region Ostfriesland. Wir begleiten
