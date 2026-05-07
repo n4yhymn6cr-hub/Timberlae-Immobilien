@@ -19,7 +19,7 @@ export interface Property {
   baujahr?: number;
   typ: PropertyType;
   eigenschaften: string[];
-  hervorgehoben?: boolean;
+  bilder?: string[];
 
   // Detail-Felder
   beschreibung?: string;
@@ -37,6 +37,8 @@ export interface Property {
   anmerkungen?: string;
   sonstiges?: string;
 }
+
+const BASE = "https://www.timberlae-immobilien.de/de/upload";
 
 export const properties: Property[] = [
   {
@@ -68,7 +70,14 @@ export const properties: Property[] = [
       "Seniorengerecht",
       "Nichtraucher",
     ],
-    hervorgehoben: true,
+    bilder: [
+      `${BASE}/4817-216-1-g.jpg`,
+      `${BASE}/4818-216-2-g.jpg`,
+      `${BASE}/4819-216-3-g.jpg`,
+      `${BASE}/4820-216-4-g.jpg`,
+      `${BASE}/4821-216-5-g.jpg`,
+      `${BASE}/4822-216-6-g.jpg`,
+    ],
     beschreibung:
       "Platzhalter – Objektbeschreibung folgt. Dieses gepflegte Einfamilienhaus in Wiesmoor bietet auf 165 m² Wohnfläche viel Raum für die ganze Familie. Das Grundstück mit 883 m² lädt zu Gartenaktivitäten ein. Die Immobilie befindet sich in einem sehr gepflegten Zustand und ist sofort bezugsfertig.",
     haustyp: "Einfamilienhaus",
@@ -114,7 +123,14 @@ export const properties: Property[] = [
       "Garage",
       "Ferienhaus geeignet",
     ],
-    hervorgehoben: true,
+    bilder: [
+      `${BASE}/4754-215-1-g.jpg`,
+      `${BASE}/4755-215-2-g.jpg`,
+      `${BASE}/4756-215-3-g.jpg`,
+      `${BASE}/4757-215-4-g.jpg`,
+      `${BASE}/4758-215-5-g.jpg`,
+      `${BASE}/4759-215-6-g.jpg`,
+    ],
     beschreibung:
       "Platzhalter – Objektbeschreibung folgt. Dieser exklusive Winkelbungalow in Großefehn überzeugt mit seiner ebenerdigen Bauweise und der hochwertigen Ausstattung. Auf 160 m² Wohnfläche erwartet Sie ein großzügiges Raumkonzept mit vier Zimmern, einer Sauna und einem traumhaften 1.370 m² Grundstück.",
     haustyp: "Bungalow",
@@ -148,7 +164,9 @@ export const properties: Property[] = [
     zimmer: 4,
     typ: "haus",
     eigenschaften: [],
-    hervorgehoben: false,
+    bilder: [
+      `${BASE}/4705-204-4-g.jpg`,
+    ],
     beschreibung:
       "Platzhalter – Objektbeschreibung folgt. Dieses charmante Einfamilienhaus in Großefehn besticht durch seinen ostfriesischen Charakter und die ruhige Lage. Auf 150 m² Wohnfläche finden vier Zimmer Platz – ideal für Familien oder Rückkehrer, die die Vorzüge der Region genießen möchten.",
     haustyp: "Einfamilienhaus",
@@ -162,40 +180,6 @@ export const properties: Property[] = [
     energieklasse: "E",
     endenergiebedarf: 175,
     energietraeger: "Heizöl",
-    anmerkungen: "Platzhalter – Anmerkungen folgen.",
-    sonstiges: "Platzhalter – Sonstige Informationen folgen.",
-  },
-  {
-    id: "202",
-    objektNr: "202",
-    titel: "Bürofläche in Timmel – frei konfigurierbar",
-    kurzBeschreibung:
-      "Flexible Gewerbefläche in 26629 Timmel, ideal für Büros, Praxen oder Dienstleister. Moderner Zuschnitt, gute Erreichbarkeit.",
-    ort: "Timmel",
-    plz: "26629",
-    bezirk: "Aurich",
-    bundesland: "Niedersachsen",
-    preis: null,
-    preisAufAnfrage: true,
-    wohnflaeche: null,
-    grundstueck: null,
-    zimmer: null,
-    typ: "gewerbe",
-    eigenschaften: ["Frei konfigurierbar"],
-    hervorgehoben: false,
-    beschreibung:
-      "Platzhalter – Objektbeschreibung folgt. Diese moderne Gewerbefläche in Timmel eignet sich hervorragend für Büros, Praxen oder Dienstleistungsbetriebe. Der flexible Grundriss lässt sich individuell an Ihre Bedürfnisse anpassen.",
-    haustyp: "Bürofläche",
-    etagen: 1,
-    moebliert: false,
-    heizungsart: "Zentralheizung",
-    heizungssystem: "Gas",
-    garage: false,
-    carport: false,
-    stellplaetze: 2,
-    energieklasse: "C",
-    endenergiebedarf: 95,
-    energietraeger: "Erdgas",
     anmerkungen: "Platzhalter – Anmerkungen folgen.",
     sonstiges: "Platzhalter – Sonstige Informationen folgen.",
   },
@@ -216,7 +200,9 @@ export const properties: Property[] = [
     zimmer: 6,
     typ: "kaufgesuch",
     eigenschaften: [],
-    hervorgehoben: false,
+    bilder: [
+      `${BASE}/4502-203-1-g.jpg`,
+    ],
     beschreibung:
       "Ein bodenständiger Unternehmer aus der Region sucht für sich und seine Familie ein neues Zuhause. Gesucht wird ein Objekt mit mindestens 150 m² Wohnfläche und 6 Zimmern in den Gemeinden Großefehn, Ihlow oder Moormerland. Haben Sie ein passendes Objekt? Wir freuen uns auf Ihre Kontaktaufnahme.",
     anmerkungen: "Der Interessent wünscht eine diskrete Abwicklung. Platzhalter – weitere Details folgen.",

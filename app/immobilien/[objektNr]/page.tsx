@@ -60,11 +60,6 @@ export default async function PropertyDetailPage({
             <span className={`text-xs font-semibold px-3 py-1 rounded-full ${typColors[property.typ]}`}>
               {typLabels[property.typ]}
             </span>
-            {property.hervorgehoben && (
-              <span className="text-xs font-semibold px-3 py-1 rounded-full bg-amber-500 text-white">
-                Empfehlung
-              </span>
-            )}
           </div>
           <h1 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
             {property.titel}
@@ -82,19 +77,27 @@ export default async function PropertyDetailPage({
       <section className="bg-white border-b border-gray-100 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={i}
-                className="aspect-[4/3] bg-gradient-to-br from-[#1C3A2A]/8 to-[#B84C0A]/8 rounded-lg flex flex-col items-center justify-center border border-gray-100"
-              >
-                <Home size={32} className="text-[#1C3A2A]/20 mb-2" />
-                <span className="text-[#1C3A2A]/30 text-xs">Bild {i + 1}</span>
-              </div>
-            ))}
+            {Array.from({ length: 6 }).map((_, i) => {
+              const src = property.bilder?.[i];
+              return src ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={i}
+                  src={src}
+                  alt={`${property.titel} – Bild ${i + 1}`}
+                  className="aspect-[4/3] w-full object-cover rounded-lg"
+                />
+              ) : (
+                <div
+                  key={i}
+                  className="aspect-[4/3] bg-gradient-to-br from-[#1C3A2A]/8 to-[#B84C0A]/8 rounded-lg flex flex-col items-center justify-center border border-gray-100"
+                >
+                  <Home size={32} className="text-[#1C3A2A]/20 mb-2" />
+                  <span className="text-[#1C3A2A]/30 text-xs">Bild {i + 1}</span>
+                </div>
+              );
+            })}
           </div>
-          <p className="text-gray-400 text-xs mt-3 text-center">
-            Bilder werden nachträglich hinzugefügt
-          </p>
         </div>
       </section>
 

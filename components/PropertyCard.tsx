@@ -21,21 +21,23 @@ export function PropertyCard({ property }: { property: Property }) {
 
   return (
     <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden flex flex-col group">
-      {/* Image placeholder */}
-      <div className="relative h-48 bg-gradient-to-br from-[#1C3A2A]/10 to-[#B84C0A]/10 flex items-center justify-center">
-        <Home size={48} className="text-[#1C3A2A]/20" />
+      {/* Image */}
+      <div className="relative h-48 bg-gradient-to-br from-[#1C3A2A]/10 to-[#B84C0A]/10 flex items-center justify-center overflow-hidden">
+        {property.bilder && property.bilder.length > 0 ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={property.bilder[0]}
+            alt={property.titel}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <Home size={48} className="text-[#1C3A2A]/20" />
+        )}
         <div className="absolute top-3 left-3">
           <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${typColors[property.typ]}`}>
             {typLabels[property.typ]}
           </span>
         </div>
-        {property.hervorgehoben && (
-          <div className="absolute top-3 right-3">
-            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-500 text-white">
-              Empfehlung
-            </span>
-          </div>
-        )}
       </div>
 
       <div className="p-5 flex flex-col flex-1">

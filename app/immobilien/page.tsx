@@ -55,24 +55,33 @@ export default function ImmobilienPage() {
           )}
 
           {/* Gewerbe */}
-          {gewerbe.length > 0 && (
-            <div className="mb-14">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-lg bg-[#1C3A2A] flex items-center justify-center">
-                  <Building2 size={16} className="text-white" />
-                </div>
-                <h2 className="font-heading text-2xl font-bold text-[#1C3A2A]">
-                  Gewerbeobjekte
-                  <span className="ml-2 text-sm font-normal text-gray-400">({gewerbe.length})</span>
-                </h2>
+          <div className="mb-14">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-8 h-8 rounded-lg bg-[#1C3A2A] flex items-center justify-center">
+                <Building2 size={16} className="text-white" />
               </div>
+              <h2 className="font-heading text-2xl font-bold text-[#1C3A2A]">
+                Gewerbeobjekte
+                {gewerbe.length > 0 && (
+                  <span className="ml-2 text-sm font-normal text-gray-400">({gewerbe.length})</span>
+                )}
+              </h2>
+            </div>
+            {gewerbe.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {gewerbe.map((p) => (
                   <PropertyCard key={p.id} property={p} />
                 ))}
               </div>
-            </div>
-          )}
+            ) : (
+              <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-8 text-center">
+                <Building2 size={36} className="text-gray-200 mx-auto mb-3" />
+                <p className="text-gray-500 text-sm">
+                  Aktuell keine Gewerbeobjekte inseriert – neue Angebote folgen in Kürze.
+                </p>
+              </div>
+            )}
+          </div>
 
           {/* Kaufgesuche – klar getrennt und erklärt */}
           {gesuche.length > 0 && (
