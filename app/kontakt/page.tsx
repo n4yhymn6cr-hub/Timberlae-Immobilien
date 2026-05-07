@@ -134,7 +134,7 @@ export default function KontaktPage() {
                 <div className="text-center">
                   <MapPin size={28} className="text-[#1C3A2A]/30 mx-auto mb-2" />
                   <p className="text-[#1C3A2A]/50 text-xs">
-                    Ankerweg 2 · 26629 Großefehn
+                    Ankerweg 2 · 26629 Timmel
                   </p>
                 </div>
               </div>

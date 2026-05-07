@@ -177,7 +177,7 @@ export default async function PropertyDetailPage({
                   <h2 className="font-heading text-xl font-bold text-[#1C3A2A] mb-4">
                     Objektbeschreibung
                   </h2>
-                  <p className="text-gray-600 leading-relaxed text-sm">{property.beschreibung}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm whitespace-pre-line">{property.beschreibung}</p>
                 </div>
               )}
 
@@ -210,7 +210,7 @@ export default async function PropertyDetailPage({
                       <tr>
                         <td className="py-2.5 text-gray-500">Möbliert</td>
                         <td className="py-2.5 text-gray-800 font-medium">
-                          {property.moebliert ? "Ja" : "Nein"}
+                          {property.moebliert ? "Teilmöbliert" : "Nein"}
                         </td>
                       </tr>
                     )}
@@ -302,7 +302,7 @@ export default async function PropertyDetailPage({
                     </tbody>
                   </table>
                   <p className="text-gray-400 text-xs mt-4">
-                    * Platzhalter – Energieausweis wird nachgereicht.
+                    * Energieausweis liegt zur Besichtigung vor.
                   </p>
                 </div>
               )}
@@ -311,7 +311,7 @@ export default async function PropertyDetailPage({
               {property.anmerkungen && (
                 <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
                   <h2 className="font-heading text-xl font-bold text-[#1C3A2A] mb-4">Anmerkungen</h2>
-                  <p className="text-gray-600 leading-relaxed text-sm">{property.anmerkungen}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm whitespace-pre-line">{property.anmerkungen}</p>
                 </div>
               )}
 
@@ -319,7 +319,7 @@ export default async function PropertyDetailPage({
               {property.sonstiges && (
                 <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
                   <h2 className="font-heading text-xl font-bold text-[#1C3A2A] mb-4">Sonstiges</h2>
-                  <p className="text-gray-600 leading-relaxed text-sm">{property.sonstiges}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm whitespace-pre-line">{property.sonstiges}</p>
                 </div>
               )}
             </div>
@@ -328,7 +328,9 @@ export default async function PropertyDetailPage({
             <div className="space-y-5">
               {/* Price card */}
               <div className="bg-[#1C3A2A] rounded-2xl p-6 text-white">
-                <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Kaufpreis</p>
+                <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">
+                  {isGesuch ? "Suchbudget" : "Kaufpreis"}
+                </p>
                 <p className="font-heading text-2xl font-bold text-white mb-1">
                   {formatPreis(property.preis, property.preisAufAnfrage)}
                 </p>

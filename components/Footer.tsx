@@ -18,13 +18,13 @@ export function Footer() {
               lokalem Know-how.
             </p>
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/timberlae.immobilien/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-5 text-gray-400 hover:text-[#B84C0A] transition-colors text-sm"
             >
               <ExternalLink size={16} />
-              Instagram
+              @timberlae.immobilien
             </a>
           </div>
 
